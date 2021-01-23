@@ -1,0 +1,10 @@
+<h1>Appointments#show</h1>
+<p>Find me in app/views/appointments/show.html.erb</p>
+
+<%# Create an Appointment#show page that shows the date, time, patient, and doctor for that particular appointment. Note that there should NOT be an Appointment#index page –– we don't want to have all of the appointments on display for anyone to see. %>
+
+<h3><%=@appointment.appointment_datetime.strftime('%B %d, %Y at %H:%M')%></h3>
+
+Doctor: <%=link_to "#{Doctor.find(@appointment.doctor_id).name}", doctor_path(Doctor.find(@appointment.doctor_id))%>
+<br>
+Patient: <%=link_to "#{Patient.find(@appointment.patient_id).name}", patient_path(Patient.find(@appointment.patient_id))%>

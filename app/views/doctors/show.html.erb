@@ -1,0 +1,14 @@
+  <%# this should link to the patients show page  %>
+
+<h1><%= @doctor.name %></h1>
+<h1><%= @doctor.department %></h1>
+
+<ul>
+  <% @doctor.appointments.each do |a| %>
+
+    <li><%=link_to "#{a.appointment_datetime.strftime('%B %d, %Y at %H:%M')} 
+    Name: #{Patient.find(a.patient_id).name}  
+    Age: #{Patient.find(a.patient_id).age}",  patient_path(Patient.find(a.patient_id))%>
+  </li>
+  </ul>
+<%end%>

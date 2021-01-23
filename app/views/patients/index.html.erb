@@ -1,0 +1,12 @@
+<h1>Patients#index</h1>
+<p>Find me in app/views/patients/index.html.erb</p>
+
+<%# Create a Patient#index page that displays a link to each patient's show page and the total number of appointments they have. %>
+
+<ul>
+<%@patient.each do |p|%>
+  <li>
+    <%= link_to "Name: #{p.name} Number of Appointments: #{p.appointments.size}", patient_path(p)%>
+  </li>
+<%end%>
+  </ul>
